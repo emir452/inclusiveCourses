@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewData["Title"] = "error de inicio de sesión";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1> error en el inicio de sesión</h1>
+<article>
+    <p> por fabor, comprueba tus datos </p>
+    @Html.ActionLink("intentarlo de nuevo", "login", "LoginController");
+</article>

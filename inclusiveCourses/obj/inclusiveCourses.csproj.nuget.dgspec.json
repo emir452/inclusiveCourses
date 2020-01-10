@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\inclusive courses\\inclusiveCourses\\inclusiveCourses\\inclusiveCourses.csproj": {}
+    "D:\\inclusiveCourses\\inclusiveCourses\\inclusiveCourses.csproj": {}
   },
   "projects": {
-    "D:\\inclusive courses\\inclusiveCourses\\inclusiveCourses\\inclusiveCourses.csproj": {
+    "D:\\inclusiveCourses\\inclusiveCourses\\inclusiveCourses.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\inclusive courses\\inclusiveCourses\\inclusiveCourses\\inclusiveCourses.csproj",
+        "projectUniqueName": "D:\\inclusiveCourses\\inclusiveCourses\\inclusiveCourses.csproj",
         "projectName": "inclusiveCourses",
-        "projectPath": "D:\\inclusive courses\\inclusiveCourses\\inclusiveCourses\\inclusiveCourses.csproj",
+        "projectPath": "D:\\inclusiveCourses\\inclusiveCourses\\inclusiveCourses.csproj",
         "packagesPath": "C:\\Users\\compu\\.nuget\\packages\\",
-        "outputPath": "D:\\inclusive courses\\inclusiveCourses\\inclusiveCourses\\obj\\",
+        "outputPath": "D:\\inclusiveCourses\\inclusiveCourses\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -42,6 +42,26 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.Extensions.Logging.Debug": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
