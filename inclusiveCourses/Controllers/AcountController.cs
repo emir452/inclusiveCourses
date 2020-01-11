@@ -4,30 +4,41 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-
+using inclusiveCourses.Models;
 namespace inclusiveCourses.Controllers
 {
     public class AcountController : Controller
     {
-        public ActionResult login()
+        private User currentUser;
+        public AcountController()
+        {
+            currentUser=null;
+        }
+        public IActionResult login()
         {
             return View();
 
 }
         [HttpPost]
-        public IActionResult login(String email, string password)
+        public ActionResult login(User user)
         {
-            if (string.IsNullOrEmpty(email) && string.IsNullOrEmpty(password))
+            currentUser = user;
+            if ((string.IsNullOrEmpty(currentUser.email) && string.IsNullOrEmpty(currentUser.password)) == false)
             {
-                Models.User user = new Models.User();
-                user.email = email;
-                user.password = password;
-              return new ProfileController(user).index();
-            }
-            return new loginErrorController().Index();
-
+                return RedirectToAction("profile");
+}
+            return RedirectToAction("loginError"); 
+}
+public ActionResult loginError()
+        {
+            return View();
+        }
+       
+public ActionResult profile()
+        {
+            return View(currentUser);
+            
 
         }
-
-    }
+}
 }

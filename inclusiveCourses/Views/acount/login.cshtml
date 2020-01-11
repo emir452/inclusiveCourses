@@ -3,8 +3,16 @@
     ViewData["Title"] = "ingresar";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-    <div class="text-center">
-        <h1 class="display-4">login</h1>
-        </div>
+<div class="text-center">
+    <h1 class="display-4">login</h1>
+</div>
 @model User
-@Html.BeginForm("login","AcountController")
+@using (Html.BeginForm("login", "Acount", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.email, "email"); @Html.TextBoxFor(x => x.email);
+    @Html.LabelFor(x => x.password, "contraseña"); @Html.TextBoxFor(x => x.password);
+
+    <input type="submit" value="Enviar" />
+}
+
+
