@@ -12,8 +12,9 @@ namespace inclusiveCourses.Controllers
         private User currentUser;
         public AcountController()
         {
-            currentUser=null;
-        }
+            currentUser = new User();
+            currentUser.email = "default";
+}
         public IActionResult login()
         {
             return View();
@@ -23,9 +24,13 @@ namespace inclusiveCourses.Controllers
         public ActionResult login(User user)
         {
             currentUser = user;
+           
             if ((string.IsNullOrEmpty(currentUser.email) && string.IsNullOrEmpty(currentUser.password)) == false)
-            {
-                return RedirectToAction("profile");
+{
+                HttpContext.Session.SetInt32("userId", 0);
+                HttpContext.Session.CommitAsync();
+return RedirectToAction("profile");
+               
 }
             return RedirectToAction("loginError"); 
 }
@@ -33,12 +38,14 @@ public ActionResult loginError()
         {
             return View();
         }
-       
 public ActionResult profile()
         {
-            return View(currentUser);
-            
-
-        }
+                HttpContext.Session.LoadAsync();
+             if (HttpContext.Session.GetInt32("userId")==0)
+            {
+                currentUser.email = "test correcto";
+            }
+                return View(currentUser);
+}
 }
 }

@@ -1,9 +1,10 @@
-﻿
+﻿@using inclusiveCourses.Models
+@model User
 @{
     ViewData["Title"] = "profile";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@model User
-@Html.DisplayForModel()
-<h1>profile</h1>
 
+<h1>profile</h1>
+    <p>email: @Model.email</p>
+    

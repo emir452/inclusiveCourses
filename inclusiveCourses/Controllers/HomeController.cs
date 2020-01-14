@@ -20,9 +20,8 @@ namespace inclusiveCourses.Controllers
 
         public IActionResult Index()
         {
-            return View();
-        }
-
-        
-    }
+            ViewData["keyWorld"] = "hola ";
+return View();
+}
+}
 }
